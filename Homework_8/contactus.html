@@ -12,22 +12,35 @@
 
 
      <script>
-     function checkboxes()
-        {
-            var firstName = document.getElementById("fName").value;
-            if(firstName == "")
-            {
-                document.getElementById("fName").focus();
-                document.getElementById("fName").style.backgroundColor = "red";
-                document.getElementById("fNameMessage").innerHTML = "* Required";
-                document.getElementById("fNameMessage").style.color = "red";
-
-            }
-          }
+     <
+    function checkboxes() {
+        var firstName = document.forms["RegForm"]["Name"];
+        var lastName = document.forms["RegForm"]["Telephone"];
+        var email = document.forms["RegForm"]["EMail"];
 
 
+        if (firstName.value == "") {
+            window.alert("Please enter your first name.");
+            firstName.focus();
+            return false;
+        }
 
-     </script>
+        if (lastName.value == "") {
+            window.alert("Please enter your last name.");
+            lastName.focus();
+            return false;
+        }
+
+        if (email.value == "") {
+            window.alert(
+              "Please enter a valid e-mail address.");
+            email.focus();
+            return false;
+        }
+
+    }
+</script>
+
 
 
 
@@ -38,15 +51,20 @@
   <div style="margin-left: 40px;">
     <h1>Contact Us</h1>
     <p></p>
+    <form name="RegForm" action="/submit.php"
+         onsubmit="return checkboxes()" method="post">
 
-           <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
-           <p>Last Name: <input type="text" id="lName">&nbsp;</p>
-           <p>Email Address: <input type="text" id="email"></p>
+           <p>First Name: <input type="text" name="firstName"/></p>
+           <p>Last Name: <input type="text" name="lastName"/></p>
+           <p>Email Address: <input type="text" name="email"/></p>
+
 
            <p>I accept the terms of agreement</p>
            <input type="checkbox" name="Yes" value="Yes"> Yes<br>
            <input type="checkbox" name="No" value="No"> No<br>
-           <button id="btnSubmit" class="btn btn-primary" onclick='checkboxes();'>Submit My Info</button>
+           <input type="submit"
+                       value="send" name="Submit" />
+      
 
        <p><a href="homepage.html" style="font-size: 20px; color: Maroon;">Go to the Home Page</a>
        &nbsp;|&nbsp;<a href="about.html"style="font-size: 20px; color: Maroon;">Go to the Short Story</a></p>
