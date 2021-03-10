@@ -12,39 +12,19 @@
 
 
      <script>
+     function checkboxes()
+        {
+            var firstName = document.getElementById("fName").value;
+            if(firstName == "")
+            {
+                document.getElementById("fName").focus();
+                document.getElementById("fName").style.backgroundColor = "red";
+                document.getElementById("fNameMessage").innerHTML = "* Required";
+                document.getElementById("fNameMessage").style.color = "red";
 
-        var fields= {};
-          document.addEventListener("DOMContentLoaded", function() {
-            fields.fname = document.getElementById ('fname');
-            fields.lname = document.getElementById ('lname');
-            fields.email = document.getElementById ('email');
-          })
+            }
+          }
 
-          function fieldsValidation(field, validationFunction)
-           {
-               if(field == "") return false;
-
-               let isFieldValid= validationFunction(field.value)
-               if (!isFieldValid) {
-                   document.getElementById("fName, lname, email").focus();
-                   document.getElementById("fName, lname, email").style.backgroundColor = "red";
-                   document.getElementById("fNameMessage, lname, email").innerHTML = "* Required";
-                   document.getElementById("fNameMessage, lname, email").style.color = "red";
-             } else {
-               field.className = '';
-             }
-
-               return isFieldValid;
-           }
-
-           function isValid() {
-             var valid = true;
-             valid &= fieldsValidation(fields, fname, isNotEmpty);
-             valid &= fieldsValidation(fields, lname, isNotEmpty);
-             valid &= fieldsValidation(fields, email, isNotEmpty);
-
-             return valid;
-           }
 
 
      </script>
@@ -62,6 +42,7 @@
            <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
            <p>Last Name: <input type="text" id="lName">&nbsp;</p>
            <p>Email Address: <input type="text" id="email"></p>
+
            <p>I accept the terms of agreement</p>
            <input type="checkbox" name="Yes" value="Yes"> Yes<br>
            <input type="checkbox" name="No" value="No"> No<br>
