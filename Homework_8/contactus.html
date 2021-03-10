@@ -16,7 +16,7 @@
     function checkboxes() {
         var firstName = document.forms["RegForm"]["firstName"];
         var lastName = document.forms["RegForm"]["lastName"];
-        var email = document.forms["RegForm"]["EMail"];
+        var email = document.forms["RegForm"]["email"];
 
 
         if (firstName.value == "") {
@@ -51,7 +51,7 @@
   <div style="margin-left: 40px;">
     <h1>Contact Us</h1>
     <p></p>
-    <form name="RegForm" action="/submit.php"
+    <form name="RegForm"
          onsubmit="return checkboxes()" method="post">
 
            <p>First Name: <input type="text" name="firstName"/></p>
@@ -63,7 +63,7 @@
            <input type="checkbox" name="Yes" value="Yes"> Yes<br>
            <input type="checkbox" name="No" value="No"> No<br>
            <input type="submit"
-                       value="send" name="Submit" />
+                       value="Submit" name="Submit" />
 
 
        <p><a href="homepage.html" style="font-size: 20px; color: Maroon;">Go to the Home Page</a>
