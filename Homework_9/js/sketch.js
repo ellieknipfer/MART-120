@@ -10,11 +10,10 @@ function draw()
   textSize(22)
   text("Hello, World!", 10,80);
 
-
   //Hair
   noStroke()
   fill(77, 55, 12);
-  arc(260, 260, 310, 400, QUARTER_PI + HALF_PI, QUARTER_PI, OPEN);
+  arc(260, 290, 310, 450, QUARTER_PI + HALF_PI, QUARTER_PI, OPEN);
 
   //Face
   noStroke()
@@ -28,7 +27,7 @@ function draw()
   //Bang
   noStroke()
   fill(77, 55, 12);
-  arc(310, 150, 180, 100, 0, PI + QUARTER_PI, CHORD);
+  arc(290, 160, 180, 105, 0, PI + QUARTER_PI, CHORD);
 
 
   //Eyebrows
@@ -51,6 +50,7 @@ function draw()
   ellipse(207, 252, 8, 8);
   ellipse(306, 252, 8, 8);
 
+
   //Nose
   fill(247, 221, 180)
   triangle(260, 270, 270, 300, 250, 300);
@@ -58,6 +58,7 @@ function draw()
   //Mouth
   fill(255, 102, 102);
   arc(260, 325, 49, 35, 0, PI);
+
 
   //Hoodie
   rectMode(CENTER)
@@ -77,6 +78,7 @@ function draw()
   fill(247, 221, 212)
   rect(260, 380, 50, 55, 20);
 
+  //Decoration
   fill(120);
   textSize(18);
   text("Ellie Knipfer",300,565);
