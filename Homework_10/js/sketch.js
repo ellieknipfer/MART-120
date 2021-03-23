@@ -23,6 +23,7 @@ var movement;
 function setup()
 {
   createCanvas(500, 600);
+  //Make shapes moce at different random speeds 
   movement = Math.floor(Math.random() * 10) + 1;
 }
 
@@ -43,7 +44,7 @@ function draw()
   //Face
   noStroke();
   fill(245, 218, 183);
-
+  //Move face diagonally on x and y-axis
   x += 5
   y += 5
   if(y > 800){
@@ -71,6 +72,7 @@ function draw()
   //Eyes
   strokeWeight(1);
   fill(46, 161, 210);
+  //Move eye back and forth along y-axis at random speeds
   circle(eyeSX, eyeSY, 25);
   if(eyeSY >= 500 || eyeSY <= 0)
   {
@@ -79,6 +81,7 @@ function draw()
   {
     eyeSY += movement;
   }
+  //Move eye back and forth along x-axis at random speeds
   circle(eyesX,eyesY,25);
   if(eyesX >= 500 || eyesX <= 0)
   {
@@ -88,11 +91,10 @@ function draw()
     eyesX += movement;
   }
 
-
-
   //Eyeballs
   noStroke();
   fill(255);
+  //Move eyeball back and forth along x-axis at random speeds
   circle(eyeballX,eyeballY,10);
   if(eyeballX >= 500 || eyeballX <= 0)
   {
@@ -101,7 +103,7 @@ function draw()
   {
     eyeballX += movement;
   }
-
+  //Move eyeball back and forth along y-axis at random speeds
   circle(eyeBallX,eyeBallY,10);
   if(eyeBallY >= 500 || eyeBallY <= 0)
   {
@@ -134,7 +136,6 @@ function draw()
   rect(260, 380, 50, 55, 20);
   rect(260, 380, 50, 55, 20);
 
-
   //Mouth
   fill(255, 102, 102);
   arc(260, 325, 49, 35, 0, PI);
@@ -144,6 +145,7 @@ function draw()
 
   //Decoration
   fill(120);
+  //Make title 5 times larger and 5 times smaller, repeat forever
   textSize(size);
   size+= sizeDirection;
   count++;
