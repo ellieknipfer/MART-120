@@ -1,17 +1,39 @@
+
+var eyesX = 310;
+var eyesY = 260;
+
+var eyeSX = 210;
+var eyeSY = 260;
+
+var eyeballX = 207;
+var eyeballY = 252;
+
+var eyeBallX = 306;
+var eyeBallY = 252;
+
+let x = 0;
+let y = 0;
+
+var size = 22;
+var count = 0;
+var sizeDirection = 2;
+
+var movement;
+
 function setup()
 {
   createCanvas(500, 600);
+  movement = Math.floor(Math.random() * 10) + 1;
 }
 
 function draw()
 {
   background(225,153,153);
-  noStroke();
   textSize(22);
+  noStroke();
   fill(120);
   text("Hello, World!", 20, 80);
-  textSize(15);
-  text("Ellie Knipfer", 310, 565);
+
 
   //Hair
   noStroke();
@@ -21,7 +43,14 @@ function draw()
   //Face
   noStroke();
   fill(245, 218, 183);
-  ellipse(260, 255, 200, 260);
+
+  x += 5
+  y += 5
+  if(y > 800){
+    y=0;
+    x=0;
+  }
+  ellipse(x, y, 200, 260);
 
   //Ears
   arc(150, 265, 40, 60, 0, PI + HALF_PI, PI + HALF_PI, OPEN);
@@ -42,14 +71,45 @@ function draw()
   //Eyes
   strokeWeight(1);
   fill(46, 161, 210);
-  ellipse(210, 260, 28, 25);
-  ellipse(310, 260, 28, 25);
+  circle(eyeSX, eyeSY, 25);
+  if(eyeSY >= 500 || eyeSY <= 0)
+  {
+    movement *= -1;
+  }
+  {
+    eyeSY += movement;
+  }
+  circle(eyesX,eyesY,25);
+  if(eyesX >= 500 || eyesX <= 0)
+  {
+    movement *= -1;
+  }
+  {
+    eyesX += movement;
+  }
+
+
 
   //Eyeballs
   noStroke();
   fill(255);
-  ellipse(207, 252, 8, 8);
-  ellipse(306, 252, 8, 8);
+  circle(eyeballX,eyeballY,10);
+  if(eyeballX >= 500 || eyeballX <= 0)
+  {
+    movement *= -1;
+  }
+  {
+    eyeballX += movement;
+  }
+
+  circle(eyeBallX,eyeBallY,10);
+  if(eyeBallY >= 500 || eyeBallY <= 0)
+  {
+    movement *= -1;
+  }
+  {
+    eyeBallY += movement;
+  }
 
   //Nose
   fill(245, 212, 170);
@@ -65,12 +125,15 @@ function draw()
   fill(255);
   ellipse(300, 432, 15, 15);
   ellipse(220, 432, 15, 15);
+  ellipse(220, 432, 15, 15);
   rect(300, 460, 8, 65, 20);
   rect(220, 460, 8, 65, 20);
 
   //Neck
   fill(245, 218, 183);
   rect(260, 380, 50, 55, 20);
+  rect(260, 380, 50, 55, 20);
+
 
   //Mouth
   fill(255, 102, 102);
@@ -78,5 +141,17 @@ function draw()
   stroke(225);
   strokeWeight(3);
   line(239, 331, 281, 331);
+
+  //Decoration
+  fill(120);
+  textSize(size);
+  size+= sizeDirection;
+  count++;
+   if(count > 5)
+   {
+     sizeDirection *=-1;
+     count = 0;
+   }
+  text("Ellie Knipfer", 270,500);
 
 }
