@@ -23,7 +23,7 @@ var movement;
 function setup()
 {
   createCanvas(500, 600);
-  //Make shapes moce at different random speeds 
+  //Make shapes move at different random speeds
   movement = Math.floor(Math.random() * 10) + 1;
 }
 
